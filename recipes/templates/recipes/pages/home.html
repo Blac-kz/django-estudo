@@ -1,27 +1,13 @@
-<!-- adicionar o parcial do header -->
-{% include 'recipes/partials/head.html' %}
+{% extends 'global/base.html' %}
 
-<!-- corpo da pagina -->
-<body>
-    {% include 'recipes/partials/header.html'%}
-    {% include 'recipes/partials/search.html'%}
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-            {% include 'recipes/partials/recipe.html' %}
-        </div>
-    </main>
-    <!-- ensaio do projeto de atualizar documentos -->
-    {% include 'recipes/partials/tabela.html' %}
+{%block title%} Home | {%endblock title%}  
 
-    
-    {% include 'recipes/partials/footer.html' %}
+{% block content %}
+<div class="main-content main-content-list container">
+        {% for recipe in recipes%}
+                {% include 'recipes/partials/recipe.html' %}
+        {%endfor%}
 
-</body>
+</div>
+{% endblock content %}
 
-</html>

@@ -1,18 +1,17 @@
-<!-- adicionar o parcial do header -->
-{% include 'recipes/partials/head.html' %}
+{% extends 'global/base.html' %}
 
-<!-- corpo da pagina -->
-<body>
-    {% include 'recipes/partials/header.html'%}
-    {% include 'recipes/partials/search.html'%}
-    <main class="main-content-container">
-        <div class="main-content main-content-detail container">
+{%block title%} Visualizar | {%endblock title%}  
+
+{% block content %}
+<main class="main-content-container">
+    <div class="main-content main-content-detail container">
+        {% for recipe in recipe%}
             {% include 'recipes/partials/recipe.html' %}
-        </div>
-    </main>
-    
-    {% include 'recipes/partials/footer.html' %}
+        {%endfor%}    
+    </div>
+</main>
+{% endblock content %}
 
-</body>
 
-</html>
+
+

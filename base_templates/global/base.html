@@ -1,0 +1,30 @@
+<!-- adicionar o parcial do header -->
+{% include 'recipes/partials/head.html' %}
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <!-- Nome da aba -->
+    <head>
+        <title>{% block title %}{% endblock title %}Recipes</title>
+    </head>
+
+    <!-- corpo da pagina -->
+    <body>
+        {% include 'recipes/partials/header.html'%}
+        {% include 'recipes/partials/search.html'%}
+        <main class="main-content-container">
+            {% block content %}{% endblock content %}
+
+
+
+
+        </main>
+        <!-- ensaio do projeto de atualizar documentos -->
+        {% include 'recipes/partials/tabela.html' %}
+
+        
+        {% include 'recipes/partials/footer.html' %}
+
+    </body>
+
+</html>
